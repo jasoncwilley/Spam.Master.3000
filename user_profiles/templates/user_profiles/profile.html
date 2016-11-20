@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+
+{% block title %}
+SpamMaster_3000 Profile
+{% endblock title %}
+
+<div class='containter'>
+<div class='profile-view'>
+{% block content1 %}
+<h1>Username:  {{other_user.username}}</h1>
+<h2>Full Name: {{other_user.first_name.title}} {{other_user.last_name.title}}</h2>
+<h2>Email Address:  {{other_user.email}}</h2>
+
+
+	<form action="{% url 'tweets:tweet_new' %} " method="POST">
+    	{% csrf_token %}
+    	{% for field in form %}
+    		{% include "core/_form_input.html" %}
+    	{% endfor %}
+
+
+    </form>
+	{% if tweets %}
+		{% for tweet in tweets %}
+			{% if tweet.user.username == username %}
+				{% include 'tweets/tweet_list.html' %}
+			{% endif %}
+		{% endfor %}
+	{% else %}
+	    <p>No Spam Here, Move Along!</p>
+	{% endif %}
+
+	<a class="btn btn-danger btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
+		Post New Spam
+	</a>
+{% endblock content1 %}
+{% block content 3%}
+
+	{% include 'user_profiles/who_to_follow.html' %}
+
+{% endblock conten3 %}

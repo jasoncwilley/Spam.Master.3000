@@ -1,0 +1,27 @@
+{% block content3 %}
+
+<h2>{{tweet.user.username}}</h2>
+<div class="panel panel-default tweet-box">
+	<div class="row">
+		<div class="col-xs-2">
+			{% load static %}
+
+			<img src="{% static 'core/awesome_profile.png' %}" class="user-photo">
+		</div>
+
+		<div class="col-xs-10 tweet-rows">
+			<div class="row">
+
+				<strong>{{tweet.user.first_name.title}} {{tweet.user.last_name.title}}</strong><br>
+
+				{{tweet.published_date}}
+
+			</div>
+			<div class="row">
+				{{tweet.text}}
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endblock content3 %}

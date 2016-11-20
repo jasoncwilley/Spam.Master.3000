@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+{% block title %}Post-a-Message{% endblock title %}
+
+
+
+{% block content1 %}
+
+
+{% endblock content1 %}
+
+
+{% block content2 %}<br><br><br><br><br><br>
+
+  <div class= "new-spam">
+    <form action="" method="POST">
+    	{% csrf_token %}
+    	{% for field in form %}
+    		{% include "core/_form_input.html" %}
+    	{% endfor %}
+<br>
+    	<button type="submit" class="btn btn-danger btn-lg">
+    		Post Your Spam Now!!!
+    	</button><br><br><br>
+     	{%  endblock content2 %}
+    </form><div class="container">
+
+     </div>
+  </body>
+</html>

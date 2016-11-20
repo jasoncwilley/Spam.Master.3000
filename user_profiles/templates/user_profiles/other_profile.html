@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+
+{% block content1 %}
+  <h1>Username:  {{other_user.username}}</h1>
+	<h2>Full Name: {{other_user.first_name.title}} {{other_user.last_name.title}}</h2>
+	<h2>Email Address:  {{other_user.email}}</h2>
+
+
+{% endblock content1 %}
+
+{% block content2 %}
+    <h2><center>{{other_user.username}}'s Messages</center></h2>
+    {% if tweets %}
+		{% for tweet in tweets %}
+			{% if tweet.user.pk == other_user.pk %}
+				{% include 'tweets/tweet_list.html' %}
+			{% endif %}
+		{% endfor %}
+	{% else %}
+	    <p>No Spam Here.  Move Along!!!</p>
+	{% endif %}
+
+{% endblock content2 %}
+
+{% block content3 %}
+
+{% endblock content3 %}

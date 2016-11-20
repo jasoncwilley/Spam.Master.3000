@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+          Logout
+        {% endblock title %}
+    </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://use.fontawesome.com/a04d9e4c1c.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/styles.css' %}" />
+</head>
+<body>
+    <header>
+      <nav nav navbar-header>
+        <div class="jumbotron">
+          {% load staticfiles %}
+          <link rel="stylesheet" type="text/css" href="{% static "core/login.css" %}" />
+          <img src="{% static "core/awesome_tweet.png" %}" height="180px" width="180"/>
+          <h1><font color="red">SpamMaster 3000</font><h1>
+          <h3><font color="red">The Internet's #1 Source of wasted Bandwith</font><style="text-align: center;"</style></h3>
+               <button type ="button" class="navbar-toggle" data-toggle="collaspe" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+              </button>
+
+            <div class="navbar-collapse collapse"> </div>
+                <ul class= "navbar-list">
+                        <a class="btn btn-danger btn-lg" href="{% url 'tweets:tweet_new' %}">Post Spam</a>
+                        <a class="btn btn-danger btn-lg" href="{% url 'tweets:tweet_display' %}">Spam</a>
+                        <a class="btn btn-danger btn-lg" href="{% url 'core:index' %}">Home</a>
+                    {% if request.user.is_authenticated %}
+                        <a class="btn btn-danger btn-lg" href="{% url 'register:logout' %}">Logout</a>
+                    {% else %}
+                        <a class="btn btn-danger btn-lg" href="{% url 'accounts:login' %}">Login</a>
+                        <a class="btn btn-danger btn-lg" href="{% url 'accounts:register' %}">Register</a>
+
+                    {% endif %}
+                </ul>
+           </div>
+       </nav>
+    </header>
+ <div class="container">
+    <div class="row">
+      <div class="col-lg-12" "logout-page">
+        <p style="font-size: 38px; color: black;">Thanks for visiting the SpamMaster.  Have a Great Day!!!</p><br>
+        <p style= "font-size: 40px; color: black; text-align: center;">Didn't mean to leave so soon? <br><a href="{% url 'accounts:login' %}">Click here to log back in SpamMaster 3000</font></a></p>
+    </div>
+  </div>
+</div>
+  <footer>
+  <div class="container">
+    <div class="footer-below">
+      <div class="row">
+          <div class="col-lg-12">
+            <h3></h3>
+            <ul class="list-inline" style= "text-align center; padding-left: 400px; padding-top: 200px;">
+                <li>
+                    <a href="https://keybase.io/starscape" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook fa-3x"></i></a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/u/0/101300605609406933462" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus fa-3x"></i></a>
+                </li>
+                <li>
+                   <li><a href="https://keybase.io/starscape"><img src="{% static 'core/keybase.png' %}"</img></a></li>
+                </li>
+                <li>
+                 <li><a href="https://github.com/jasoncwilley"><i class="fa fa-github-alt fa-3x"></i></a></li>
+                </li>
+            </ul>
+                <p style="font-size: 18px; color: black; text-align: center;">Another Set of Applications developed with Free and Open Source Software <br></p>
+              <p style="font-size: 18px; color: black; text-align: center; ">Information should be free not &copy or &reg</p>
+          </div>
+      </div>
+  </div>
+  </div>
+  </footer>
+<!--End Footer Section -->
+
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
+
+  <!--End Footer Section -->

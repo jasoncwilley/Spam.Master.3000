@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+
+{% block content2 %}
+	<form action="{% url 'tweets:tweet_new' %} " method="POST">
+    	{% csrf_token %}
+    	{% for field in form %}
+    		{% include "core/_form_input.html" %}
+    	{% endfor %}
+
+    	
+    </form>
+	{% if tweets %}    	
+		{% for tweet in tweets %}
+			{% include 'tweets/tweet_list.html' %}
+		{% endfor %}
+	{% else %}
+	    <p>No Spam to See here!</p>
+	{% endif %}
+
+	
+    
+{% endblock content2 %}
+
+{% block content3 %}
+
+	{% include 'user_profiles/who_to_follow.html' %}
+				
+{% endblock content3 %}

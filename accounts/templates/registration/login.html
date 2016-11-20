@@ -1,0 +1,38 @@
+{% extends "core/base.html" %}
+{% block title %}
+Login
+{% endblock title %}
+{% block content2 %}
+<div class= "containter">
+  <div class= "row">
+    <div class= "col-lg-12">
+      <div class= "login-page">
+    <br><h2> Login into your account.</h2>
+      {% if forms.errors %}
+    <div class="alert alert-danger" style="text-decoration-color: white;">
+    	No Dice. Incorrect SpammerID or Password Entered!!! Try Again.
+    </div>
+  </div>
+</div>
+</div>
+</div>
+    {% endif %}
+  <div class= "containter">
+    <div class="row">
+      <div class= "col-lg-12">
+        <div class= "login-boxes">
+        <form action="{% url 'accounts:login' %}" method="POST">
+          	{% csrf_token %}
+            {% for field in form %}
+    		        {% include 'core/_form_input.html' %}
+    	      {% endfor %}
+            <button type="submit" class="btn btn-danger btn-lg">
+          		Login to View/Post Spam!!!
+          	</button>
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>
+
+ {% endblock content2 %}

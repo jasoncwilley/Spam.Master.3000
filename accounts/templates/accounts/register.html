@@ -1,0 +1,76 @@
+{% extends "core/base.html" %}
+
+{% block content2 %}
+    <div class= "containter">
+    <div class= "registration-page">
+      <h2>Please Register using the Form Below.</h2>
+    </div>
+      </div>
+      <div class= "registration-boxes">
+    <form action="" method="POST">
+    	{% csrf_token %}
+	    {% for field in form %}
+	    	{% include "core/_form_input.html" %}
+	    {% endfor %}
+	      <button type="submit" class="btn btn-danger btn-lg">Start Spamming Now!!!</button>
+	</form>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock content2 %}
+  </div>
+</div>
+  <footer class="text-center">
+        <div class="container">
+
+              <div class="row">
+                  <div class="col-md-4">
+                      <p><style= font-size: 25px;></style>Location</p>
+                      <p>969 Piedmont Avenue
+                          <br>Oakland, CA 96010</p>
+                  </div>
+                  <div class="col-md-4" "footer-middle">
+                      <h3>Elsewhere on the Web</h3>
+                      <ul class="list-inline">
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                          </li>
+                     </ul>
+                  </div>
+                  <div class="col col-md-4" "footer-below">
+                      <h3>Quote of the Day</h3>
+                      <p>""""</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="footer-lowest">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      Copyright &copy; Jay_C_Willey
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!--End Footer Section -->
+
+
+  <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+  </html>
